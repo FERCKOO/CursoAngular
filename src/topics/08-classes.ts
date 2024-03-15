@@ -4,10 +4,14 @@ export class Person {
         public address: string;
     */
     constructor(
-        public name: string,
+        public firstName: string,
+        public lastName: string,
+        public age: number,
         private address: string = 'No address'
     ) {
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
         this.address = address;
     }
 
@@ -16,18 +20,17 @@ export class Person {
 
 export class Hero {
 
-    public person: Person;
 
     constructor(
         public alterEgo: string,
-        public age: number,
-        public realName: string = 'Nombre Oculto'
+        public person: Person,
     ) {
-        this.person = new Person(realName);
     }
 }
 
-const ironman = new Hero('Ironman', 25, 'Tony Stark');
+const person = new Person('Tony','Stark', 25, 'Chihuahua');
+
+const ironman = new Hero('Ironman', person);
 
 
 console.log(ironman);
